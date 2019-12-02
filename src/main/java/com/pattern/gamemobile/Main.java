@@ -13,6 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         FactoryPersonagem personagemFactory = new FactoryPersonagem();
+        Character character = new Character();
 
         try {
             Personagem p = personagemFactory.criarPersonagem("Barbaro");
@@ -20,5 +21,13 @@ public class Main {
         } catch (PersonagemInexistenteException ex) {
             System.out.println("Classe não existente.");
         }
+        
+        character.atirar();
+        character.mover();
+        character.alvejado();
+        character.sofrerDano(5);
+        character.mover();
+        character.atirar();
+        character.vida();
     }
 }
