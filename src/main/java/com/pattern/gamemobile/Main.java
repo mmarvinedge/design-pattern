@@ -14,14 +14,14 @@ public class Main {
     public static void main(String[] args) {
         FactoryPersonagem personagemFactory = new FactoryPersonagem();
         Character character = new Character();
-
+        DataBaseConnection.getInstance();
         try {
             Personagem p = personagemFactory.criarPersonagem("Barbaro");
             p.classe();
         } catch (PersonagemInexistenteException ex) {
             System.out.println("Classe não existente.");
         }
-        
+
         character.atirar();
         character.mover();
         character.alvejado();
@@ -29,5 +29,8 @@ public class Main {
         character.mover();
         character.atirar();
         character.vida();
+        
+        DataBaseConnection.getInstance();
+
     }
 }
