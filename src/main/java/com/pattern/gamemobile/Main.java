@@ -16,21 +16,20 @@ public class Main {
         Character character = new Character();
         DataBaseConnection.getInstance();
         try {
-            Personagem p = personagemFactory.criarPersonagem("Barbaro");
+            Personagem p = personagemFactory.criarPersonagem("Arqueiro");
             p.classe();
+            character.atirar();
+            character.mover();
+            character.alvejado();
+            character.sofrerDano(5);
+            character.mover();
+            character.atirar();
+            character.vida();
+
+            DataBaseConnection.getInstance();
         } catch (PersonagemInexistenteException ex) {
             System.out.println("Classe não existente.");
         }
-
-        character.atirar();
-        character.mover();
-        character.alvejado();
-        character.sofrerDano(5);
-        character.mover();
-        character.atirar();
-        character.vida();
-        
-        DataBaseConnection.getInstance();
 
     }
 }
